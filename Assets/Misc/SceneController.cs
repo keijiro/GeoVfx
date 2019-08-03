@@ -21,7 +21,7 @@ namespace GeoVfx
 
         float2 _prevMousePos;
 
-        float3 _dragFrom, _dragTo;
+        float3? _dragFrom, _dragTo;
         quaternion _rotateFrom;
 
         float3 _cameraAngles;
@@ -61,16 +61,13 @@ namespace GeoVfx
 
             // Initial mouse position
             _prevMousePos = float3(Input.mousePosition).xy;
-
-            // To avoid Nan
-            _dragFrom = _dragTo = float3(0, 0, 1);
         }
 
         void Update()
         {
 
             // Update the drag-to point while pressing the left button down.
-            if (Input.GetMouseButton(0)) _dragTo = MouseRayCast() ?? _dragTo;
+            if (Input.GetMouseButton(0)) _dragTo = MouseRayCast();
 
             // Update the drag-from point on a left button down.
             if (Input.GetMouseButtonDown(0))
@@ -80,11 +77,12 @@ namespace GeoVfx
             }
 
             // Globe pivot rotation
+            if (_dragFrom != null && _dragTo != null)
             {
-                var delta = RotationBetween(_dragFrom, _dragTo);
+                var delta = RotationBetween((float3)_dragFrom, (float3)_dragTo);
                 var target = mul(delta, _rotateFrom);
                 _globePivot.localRotation =
-                    ExpTween.Step(_globePivot.localRotation, target, 15);
+                    ExpTween.Step(_globePivot.localRotation, target, 12);
             }
 
             // Camera angle adjustment by right mouse drag
@@ -105,7 +103,7 @@ namespace GeoVfx
             {
                 var target = EulerZXY(_cameraAngles);
                 _cameraPivot.localRotation =
-                    ExpTween.Step(_cameraPivot.localRotation, target, 15);
+                    ExpTween.Step(_cameraPivot.localRotation, target, 12);
             }
 
             // Mouse wheel (camera distance)
@@ -114,7 +112,7 @@ namespace GeoVfx
                 _cameraDistance = Mathf.Max(1, _cameraDistance + delta);
 
                 var z = _cameraArm.localPosition.z;
-                z = ExpTween.Step(z, -_cameraDistance, 15);
+                z = ExpTween.Step(z, -_cameraDistance, 12);
 
                 _cameraArm.localPosition = new Vector3(0, 0, z);
             }
