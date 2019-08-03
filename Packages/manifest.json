@@ -2,6 +2,7 @@
   "dependencies": {
     "com.unity.package-manager-ui": "2.2.0",
     "com.unity.render-pipelines.high-definition": "6.9.1-preview",
+    "jp.keijiro.klak.math": "https://github.com/keijiro/KlakMath.git#upm",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.imageconversion": "1.0.0",
     "com.unity.modules.physics": "1.0.0",
@@ -9,5 +10,11 @@
     "com.unity.modules.ui": "1.0.0",
     "com.unity.modules.uielements": "1.0.0",
     "com.unity.modules.vr": "1.0.0"
+  },
+  "lock": {
+    "jp.keijiro.klak.math": {
+      "hash": "4776a3fe8ca109d57fcd2c0b5cc874a664966270",
+      "revision": "upm"
+    }
   }
 }
