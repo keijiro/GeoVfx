@@ -11,7 +11,6 @@ namespace GeoVfx
     {
         #region Editable attributes
 
-        [SerializeField] Camera _camera = null;
         [SerializeField] Transform _marker = null;
 
         #endregion
@@ -27,7 +26,7 @@ namespace GeoVfx
         // Reference to HDAdditionalCameraData
         HDAdditionalCameraData HDCamera { get {
             if (_hdCamera != null) return _hdCamera;
-            return (_hdCamera = _camera.GetComponent<HDAdditionalCameraData>());
+            return (_hdCamera = GetComponent<HDAdditionalCameraData>());
         } }
 
         HDAdditionalCameraData _hdCamera;
@@ -57,7 +56,7 @@ namespace GeoVfx
             if (HDCamera == null || PostProcess == null) return;
 
             // Check if the marker is moving.
-            var pos = _camera.transform.TransformPoint(_marker.position);
+            var pos = transform.TransformPoint(_marker.position);
             var moving = (pos - _previousPosition).magnitude > 0.0001f;
             _previousPosition = pos;
 
