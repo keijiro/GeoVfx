@@ -67,7 +67,7 @@ namespace GeoVfx
         {
 
             // Update the drag-to point while pressing the left button down.
-            if (Input.GetMouseButton(0)) _dragTo = MouseRayCast();
+            if (Input.GetMouseButton(0)) _dragTo = MouseRayCast() ?? _dragTo;
 
             // Update the drag-from point on a left button down.
             if (Input.GetMouseButtonDown(0))
