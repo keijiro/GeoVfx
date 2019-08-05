@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Unity.Mathematics;
 using Klak.Math;
 using static Unity.Mathematics.math;
@@ -40,27 +41,40 @@ namespace GeoVfx
 
         #endregion
 
+        #region UI event callbacks
+
+        public void OnBeginDrag(BaseEventData baseData)
+        {
+            var data = (PointerEventData)baseData;
+            if (data.button != PointerEventData.InputButton.Left) return;
+
+            data.Use();
+
+            _dragFrom = _dragTo = MouseRayCast();
+            _rotateFrom = transform.localRotation;
+        }
+
+        public void OnDrag(BaseEventData baseData)
+        {
+            var data = (PointerEventData)baseData;
+            if (data.button != PointerEventData.InputButton.Left) return;
+
+            data.Use();
+
+            _dragTo = MouseRayCast() ?? _dragTo;
+        }
+
+        #endregion
+
         #region MonoBehaviour implementation
 
         void Update()
         {
-            // Update the drag-to point while pressing the left button down.
-            if (Input.GetMouseButton(0)) _dragTo = MouseRayCast() ?? _dragTo;
+            if (_dragFrom == null || _dragTo == null) return;
 
-            // Update the drag-from point on a left button down.
-            if (Input.GetMouseButtonDown(0))
-            {
-                _dragFrom = _dragTo;
-                _rotateFrom = transform.localRotation;
-            }
-
-            // Globe pivot rotation
-            if (_dragFrom != null && _dragTo != null)
-            {
-                var delta = RotationBetween((float3)_dragFrom, (float3)_dragTo);
-                var target = mul(delta, _rotateFrom);
-                transform.localRotation = ExpTween.Step(transform.localRotation, target, 12);
-            }
+            var delta = RotationBetween((float3)_dragFrom, (float3)_dragTo);
+            var target = mul(delta, _rotateFrom);
+            transform.localRotation = ExpTween.Step(transform.localRotation, target, 12);
         }
 
         #endregion

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Unity.Mathematics;
 using Klak.Math;
 using static Unity.Mathematics.math;
@@ -10,9 +11,24 @@ namespace GeoVfx
     {
         #region Local variables
 
-        float2 _prevMousePos;
         float3 _cameraAngles;
         float _cameraDistance;
+
+        #endregion
+
+        #region UI event callbacks
+
+        public void OnDrag(BaseEventData baseData)
+        {
+            var data = (PointerEventData)baseData;
+            if (data.button != PointerEventData.InputButton.Right) return;
+
+            data.Use();
+
+            // Camera angle adjustment by right mouse drag
+            var d_angle = float2(data.delta).yx * float2(-1, 1) * 0.002f;
+            _cameraAngles.xy = clamp(_cameraAngles.xy + d_angle, -1, 1);
+        }
 
         #endregion
 
@@ -20,9 +36,6 @@ namespace GeoVfx
 
         void Start()
         {
-            // Initial mouse position
-            _prevMousePos = float3(Input.mousePosition).xy;
-
             // Initial camera angels
             _cameraAngles = radians(transform.parent.localRotation.eulerAngles);
             _cameraAngles = (_cameraAngles + PI) % (2 * PI) - PI;
@@ -33,18 +46,6 @@ namespace GeoVfx
 
         void Update()
         {
-            // Camera angle adjustment by right mouse drag
-            var mp = float3(Input.mousePosition).xy;
-            var d_mp = (float2)(mp - _prevMousePos);
-
-            if (Input.GetMouseButton(1))
-            {
-                var d_angle = d_mp.yx * float2(-1, 1) * 0.002f;
-                _cameraAngles.xy = clamp(_cameraAngles.xy + d_angle, -1, 1);
-            }
-
-            _prevMousePos = mp;
-
             // Camera pivot rotation
             var pivot = transform.parent;
             var target = EulerZXY(_cameraAngles);
