@@ -14,6 +14,10 @@ Desktop.ini
 *.vcxproj.user
 
 # Unity
+/Assets/Unity.VisualScripting.Generated
+/Assets/Unity.VisualScripting.Generated.meta
 /Library
 /Logs
+/Recordings
+/UserSettings
 /Temp

@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.Experimental.AssetImporters;
+
 using System.IO;
 
 namespace GeoVfx
 {
-    [ScriptedImporter(1, "geotex")]
-    class GeotexImporter : ScriptedImporter
+    [UnityEditor.AssetImporters.ScriptedImporter(1, "geotex")]
+    class GeotexImporter : UnityEditor.AssetImporters.ScriptedImporter
     {
         #region ScriptedImporter implementation
 
-        public override void OnImportAsset(AssetImportContext context)
+        public override void OnImportAsset(UnityEditor.AssetImporters.AssetImportContext context)
         {
             var data = ImportAsPackedPointCloud(context.assetPath);
             if (data != null)
