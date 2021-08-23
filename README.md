@@ -16,9 +16,7 @@ details.
 [SEDAC page]:
   https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11
 
-<!--4567890123456789012345678901234567890123456789012345678901234567890123456-->
-
-In the example project, geographical data is contained in `.geotex` custom
+In the example project, geographical data is contained in `.geodata` custom
 texture files. These files were generated from `.geotiff` files using [this
 notebook][Notebook]. You can use Jupyter, [Colaboratory] or your own local
 Python environment to run this script.
