@@ -4,30 +4,32 @@ using System.IO;
 
 namespace GeoVfx {
 
-[UnityEditor.AssetImporters.ScriptedImporter(1, "geotex")]
-class GeotexImporter : UnityEditor.AssetImporters.ScriptedImporter
+[UnityEditor.AssetImporters.ScriptedImporter(1, "geodata")]
+class GeoDataImporter : UnityEditor.AssetImporters.ScriptedImporter
 {
     #region ScriptedImporter implementation
 
-    public override void OnImportAsset(UnityEditor.AssetImporters.AssetImportContext context)
+    public override void
+      OnImportAsset(UnityEditor.AssetImporters.AssetImportContext context)
     {
-        var data = ImportDataSet(context.assetPath);
-        if (data != null)
-        {
-            context.AddObjectToAsset("data", data);
-            context.SetMainObject(data);
-        }
+        var data = ImportGeoData(context.assetPath);
+        if (data == null) return;
+
+        context.AddObjectToAsset("data", data);
+        context.SetMainObject(data);
     }
 
     #endregion
 
     #region Reader implementation
 
-    DataSet ImportDataSet(string path)
+    GeoData ImportGeoData(string path)
     {
         try
         {
-            var stream = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+            var stream = File.Open
+              (path, FileMode.Open, FileAccess.Read, FileShare.Read);
+
             var reader = new BinaryReader(stream);
 
             // Original map dimensions
@@ -37,6 +39,7 @@ class GeotexImporter : UnityEditor.AssetImporters.ScriptedImporter
             // Element count
             var count = reader.ReadUInt32();
 
+            // Element readout
             var array = new Vector3[count];
             for (var i = 0; i < count; i++)
             {
@@ -46,11 +49,11 @@ class GeotexImporter : UnityEditor.AssetImporters.ScriptedImporter
                 array[i] = new Vector3(px, py, data);
             }
 
-            return DataSet.CreateAsset(array);
+            return GeoData.CreateAsset(array);
         }
         catch (System.Exception e)
         {
-            Debug.LogError("Failed importing " + path + ". " + e.Message);
+            Debug.LogError($"Failed importing {path}. {e.Message}");
             return null;
         }
     }

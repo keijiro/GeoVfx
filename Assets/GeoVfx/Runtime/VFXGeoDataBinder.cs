@@ -4,9 +4,9 @@ using UnityEngine.VFX.Utility;
 
 namespace GeoVfx {
 
-[AddComponentMenu("VFX/Property Binders/GeoVfx/Data Set Binder")]
-[VFXBinder("GeoVfx/Data Set")]
-sealed class VFXGeoDataSetBinder : VFXBinderBase
+[AddComponentMenu("VFX/Property Binders/GeoVfx/GeoData Binder")]
+[VFXBinder("GeoVfx/GeoData")]
+sealed class VFXGeoDataBinder : VFXBinderBase
 {
     public string Property
       { get => (string)_property; set => _property = value; }
@@ -14,16 +14,16 @@ sealed class VFXGeoDataSetBinder : VFXBinderBase
     [VFXPropertyBinding("UnityEngine.GraphicsBuffer"), SerializeField]
     ExposedProperty _property = "DataSet";
 
-    public DataSet Source = null;
+    public GeoData Source = null;
 
     public override bool IsValid(VisualEffect component)
       => Source != null && component.HasGraphicsBuffer(_property);
 
     public override void UpdateBinding(VisualEffect component)
-      => component.SetGraphicsBuffer(_property, Source.buffer);
+      => component.SetGraphicsBuffer(_property, Source.Buffer);
 
     public override string ToString()
-      => $"Data Set : '{_property}' -> {Source?.name ?? "(null)"}";
+      => $"GeoData : '{_property}' -> {Source?.name ?? "(null)"}";
 }
 
-} // namespace GeoVfx {
+} // namespace GeoVf
