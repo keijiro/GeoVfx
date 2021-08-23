@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 382354410}
   - component: {fileID: 382354409}
   - component: {fileID: 382354408}
+  - component: {fileID: 382354412}
+  - component: {fileID: 382354411}
   m_Layer: 0
   m_Name: Population
   m_TagString: Untagged
@@ -222,8 +224,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 7506314328700112305, guid: 7bb6cc73b884e34b8b4293d92d618322,
-          type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Source Data
         m_Overridden: 1
     m_Bool:
@@ -243,6 +244,37 @@ Transform:
   m_Father: {fileID: 1165805963}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382354411
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382354407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c973c0b5a1eb0455bab6cec572c0c409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _property:
+    m_Name: Data Set
+  Source: {fileID: 7239065423396753691, guid: 7bb6cc73b884e34b8b4293d92d618322, type: 3}
+--- !u!114 &382354412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382354407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 382354411}
+  m_VisualEffect: {fileID: 382354409}
 --- !u!1 &430576492
 GameObject:
   m_ObjectHideFlags: 0
