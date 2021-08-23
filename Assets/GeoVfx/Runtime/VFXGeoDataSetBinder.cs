@@ -11,7 +11,7 @@ sealed class VFXGeoDataSetBinder : VFXBinderBase
     public string Property
       { get => (string)_property; set => _property = value; }
 
-    [VFXPropertyBinding("GraphicsBuffer"), SerializeField]
+    [VFXPropertyBinding("UnityEngine.GraphicsBuffer"), SerializeField]
     ExposedProperty _property = "DataSet";
 
     public DataSet Source = null;
