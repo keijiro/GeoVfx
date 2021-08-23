@@ -9,12 +9,7 @@ public sealed class DataSet : ScriptableObject
 
     GraphicsBuffer _buffer;
 
-    public GraphicsBuffer buffer => _buffer;
-
-    void OnEnable()
-    {
-        if (_buffer == null) _buffer = CreateBuffer();
-    }
+    public GraphicsBuffer buffer => _buffer ?? (_buffer = CreateBuffer());
 
     void OnDisable()
     {
