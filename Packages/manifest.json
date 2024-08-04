@@ -9,8 +9,8 @@
     }
   ],
   "dependencies": {
-    "com.unity.render-pipelines.universal": "14.0.9",
-    "com.unity.visualeffectgraph": "14.0.9",
+    "com.unity.render-pipelines.universal": "17.0.3",
+    "com.unity.visualeffectgraph": "17.0.3",
     "jp.keijiro.klak.math": "2.1.0"
   }
 }
