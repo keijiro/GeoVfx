@@ -431,7 +431,7 @@ MonoBehaviour:
   m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 3
+  m_SoftShadowQuality: 0
 --- !u!108 &481025628
 Light:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -738,8 +738,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 100
+  near clip plane: 0.5
+  far clip plane: 20
   field of view: 7
   orthographic: 0
   orthographic size: 5

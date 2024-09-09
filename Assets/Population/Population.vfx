@@ -61,7 +61,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":0.0,"y":0.0,"z":0.0},"size":{"x":2.0,"y":2.0,"z":2.0}}'
+      m_SerializableObject: '{"center":{"x":0.0,"y":0.0,"z":0.0},"size":{"x":100.0,"y":100.0,"z":100.0}}'
     m_Space: 0
   m_Property:
     name: bounds
@@ -86,10 +86,10 @@ MonoBehaviour:
   - title: Coloring
     position:
       serializedVersion: 2
-      x: -134
-      y: 495
-      width: 908
-      height: 372
+      x: 98
+      y: 434
+      width: 687
+      height: 340
     contents:
     - model: {fileID: 8926484042661614781}
       id: 0
@@ -109,10 +109,10 @@ MonoBehaviour:
   - title: Minimum Height
     position:
       serializedVersion: 2
-      x: 331
-      y: 254
-      width: 414
-      height: 212
+      x: 425
+      y: 240
+      width: 356
+      height: 188
     contents:
     - model: {fileID: 8926484042661614808}
       id: 0
@@ -123,10 +123,10 @@ MonoBehaviour:
   - title: GeoData Sample
     position:
       serializedVersion: 2
-      x: 0
-      y: 0
-      width: 100
-      height: 100
+      x: -350
+      y: 123
+      width: 433
+      height: 174
     contents:
     - model: {fileID: 8926484042661614890}
       id: 0
@@ -141,10 +141,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -899
+    x: -351
     y: -356
-    width: 2191
-    height: 1658
+    width: 1642
+    height: 1345
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 868, y: 648}
+  m_UIPosition: {x: 868, y: 456}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -520,7 +520,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614579}
   - {fileID: 8926484042661614585}
   - {fileID: 8926484042661614776}
-  m_UIPosition: {x: 868, y: -16}
+  m_UIPosition: {x: 868, y: -75}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -170, y: 351}
+  m_UIPosition: {x: 130, y: 298}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 454, y: 648}
+  m_UIPosition: {x: 594, y: 571}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 114, y: 764}
+  m_UIPosition: {x: 308, y: 674}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 268, y: 764}
+  m_UIPosition: {x: 435, y: 674}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 198, y: 554}
+  m_UIPosition: {x: 358, y: 492}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 576, y: 312}
+  m_UIPosition: {x: 621, y: 298}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -1655,10 +1655,10 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614818}
       inputSlot: {fileID: 8926484042661614945}
-    position: {x: 560, y: 89}
+    position: {x: 627, y: 102.5}
     expandedSlots: []
     expanded: 0
-    supecollapsed: 0
+    supecollapsed: 1
 --- !u!114 &8926484042661614818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1736,10 +1736,10 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614823}
       inputSlot: {fileID: 8926484042661614596}
-    position: {x: -379.5, y: 412}
+    position: {x: -114, y: 336.5}
     expandedSlots: []
     expanded: 0
-    supecollapsed: 0
+    supecollapsed: 1
 --- !u!114 &8926484042661614823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 356, y: 362}
+  m_UIPosition: {x: 450, y: 328}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2241,18 +2241,18 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614891}
       inputSlot: {fileID: 8926484042661614893}
-    position: {x: -769.5, y: 211.5}
+    position: {x: -281.5, y: 200}
     expandedSlots: []
     expanded: 0
-    supecollapsed: 0
+    supecollapsed: 1
   - m_Id: 1
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614891}
       inputSlot: {fileID: 8926484042661614907}
-    position: {x: 425, y: -245}
+    position: {x: 548, y: -238}
     expandedSlots: []
     expanded: 0
-    supecollapsed: 0
+    supecollapsed: 1
 --- !u!114 &8926484042661614891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,7 +2304,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -588, y: 193}
+  m_UIPosition: {x: -152, y: 182}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2539,7 +2539,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 604, y: -268}
+  m_UIPosition: {x: 677, y: -267}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -874, y: 263}
+  m_UIPosition: {x: -326, y: 243}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots: []
@@ -2655,7 +2655,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 589, y: 178}
+  m_UIPosition: {x: 627, y: 201}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -2782,7 +2782,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -108, y: 764}
+  m_UIPosition: {x: 123, y: 674}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3014,13 +3014,12 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614933}
-  m_UIPosition: {x: 868, y: 898}
+  m_UIPosition: {x: 868, y: 606}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614928}
   - {fileID: 8926484042661614929}
-  - {fileID: 8926484042661614930}
   - {fileID: 8926484042661614931}
   - {fileID: 8926484042661614932}
   m_OutputSlots: []
@@ -3070,7 +3069,7 @@ MonoBehaviour:
   materialType: 0
   workflowMode: 0
   smoothnessSource: 0
-  useBaseColorMap: 3
+  useBaseColorMap: 0
   useOcclusionMap: 0
   useMetallicMap: 0
   useSpecularMap: 0
@@ -3154,40 +3153,6 @@ MonoBehaviour:
     m_serializedType:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-  m_Direction: 0
-  m_LinkedSlots: []
---- !u!114 &8926484042661614930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a331b1d86cc8d4aa106ccbe0da5852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614930}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614927}
-    m_Value:
-      m_Type:
-        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"127279d577f25ac4ea17dae3782e5074","type":3}}'
-    m_Space: -1
-  m_Property:
-    name: baseColorMap
-    m_serializedType:
-      m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_Direction: 0
   m_LinkedSlots: []
 --- !u!114 &8926484042661614931
